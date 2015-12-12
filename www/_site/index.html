@@ -11,14 +11,56 @@
 
   <link rel="stylesheet" href="css/main.css" />
   <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/functions.js"></script>
   <script src="script.php"></script>
 </head>
 <body>
 
   <div id="calculator">
-	
-	
+	<div id="nav">
+		<a>HOME ICON</a>
+		<a>Kalendář</a>
+		<a>Kontakt</a>
+		<a>Shrnutí</a>
+	</div>
+	<div id="content">
+		<div class="sizeof">
+			<h3>Velikost bytu</h3>
+			<div class="display">
+				<label id="area" class="data">50</label>m<sup>2</sup>
+				<div class="buttons">
+					<button class="minus" type="button" onclick="Add('area',-10)">-</button>
+					<button class="plus" type="button" onclick="Add('area',10)">+</button>
+
+				</div>
+			</div>
+		</div>
+		<div class="sizeof services">
+			<div class="item">
+				<label class="name">Mytí oken</label>
+				<label class="cost">300 Kč</label>
+				<label class="yes"><input type="radio" class="radio">ANO</label>
+			</div>
+			
+			<div class="item">
+				<label class="name">Parní čištění povrchů</label>
+				<label class="cost">500 Kč</label>
+				<label class="yes"><input type="radio" class="radio">ANO</label>
+			</div>
+			
+			<div class="item">
+				<label class="name">Mytí podlah</label>
+				<label class="cost">3 Kč/m<sup>2</sup></label>
+				<label class="yes"><input type="radio" class="radio">ANO</label>
+			</div>
+			
+		</div>
+
+
+
+	</div>
+
+
 </div>
   
 </body>
