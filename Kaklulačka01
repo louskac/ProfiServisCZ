@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kalkulačka - základní návrh</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+        var okno = 50;
+        var kos = 20;
+
+        function pridatOkno(){
+            var nacteno = document.getElementsByName("cena")[0].value;
+            var iNacteno = parseInt(nacteno);
+            var vysl = okno + iNacteno;
+            document.getElementsByName("cena")[0].value = vysl;
+            document.getElementsByName("okna")[0].value = parseInt(document.getElementsByName("okna")[0].value)+1;
+        }
+
+        function ubratOkno(){
+            var nacteno = document.getElementsByName("cena")[0].value;
+            var iNacteno = parseInt(nacteno);
+            var vysl = iNacteno - okno;
+            if(parseInt(document.getElementsByName("okna")[0].value) >= 1){
+               document.getElementsByName("cena")[0].value = vysl;
+               document.getElementsByName("okna")[0].value = parseInt(document.getElementsByName("okna")[0].value)-1;
+            }else{
+                alert("Počet oken nemůže být záporný");
+            }
+        }
+
+        function pridatKos(){
+            var nacteno = document.getElementsByName("cena")[0].value;
+            var iNacteno = parseInt(nacteno);
+            var vysl = kos + iNacteno;
+            document.getElementsByName("cena")[0].value = vysl
+            document.getElementsByName("kose")[0].value = parseInt(document.getElementsByName("kose")[0].value)+1;
+        }
+
+        function ubratKos(){
+            var nacteno = document.getElementsByName("cena")[0].value;
+            var iNacteno = parseInt(nacteno);
+            var vysl = iNacteno - kos;
+            if(parseInt(document.getElementsByName("kose")[0].value) >= 1){
+               document.getElementsByName("cena")[0].value = vysl;
+               document.getElementsByName("kose")[0].value = parseInt(document.getElementsByName("kose")[0].value)-1
+            }else{
+                alert("Počet košů nemůže být záporný");
+            }
+        }
+        </script>
+    </head>
+    <body onload="celkovaCena()">
+    <article>
+        <div id="kalkulacka">
+          <h1>Klakulačka</h1>
+          <form method="post">
+            <label>Celková cena:</label><input type="text" name="cena" value="0"><br>
+            Okna (50 Kč/ks):
+                <input type="button" value="+" class="tlacitko" onclick="pridatOkno()">
+                <input type="button" value="-" class="tlacitko" onclick="ubratOkno()">
+                <input type="text" name="okna" value="0"><br>
+            Koše (20 Kč/ks):
+                <input type="button" value="+" class="tlacitko" onclick="pridatKos()">
+                <input type="button" value="-" class="tlacitko" onclick="ubratKos()">
+                <input type="text" name="kose" value="0">
+          </form>
+        </div>
+    </article>
+    </body>
+</html>
